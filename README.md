@@ -16,10 +16,17 @@ An **open-source** structural design software. P4Struct is built on a multi-laye
 - 🧩 Topology optimization
 - 📤 STL file export
 
+## 3. Download
 
-## 3. Installation
+⚠️***Because the repository contains large files, downloading the ZIP file directly will not give you the complete content.***
 
-### 3.1 Source Code
+    Solution 1: Use Git and LFS to download.
+    
+    Solution 2: Navigate to the main page of the large file and download it individually (i.e., click 'Download raw file')
+
+## 4. Installation
+
+### 4.1 Source Code
 Step 1: Install uv. 
 ```powershell
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
@@ -37,7 +44,7 @@ Step 3:  IDE Configuration.
 
 Step 4:  Open the "app" file and run it.
 
-### 3.2 Executable File
+### 4.2 Executable File
 
 Step 1: Download the compressed file 'inc.zip' and extract it to any disk that you assigned.
 
@@ -47,43 +54,45 @@ Step 3: By default, a working directory named 'P4STemp' is created in the instal
 
 Step 4: Finally, you can start using it (The operation video is in the "video demo" folder.).
 
-## 4. Examples
+## 5. Examples
 
-#### 4.1 truss structure analysis
+#### 5.1 truss structure analysis
 P4Struct:
 ![truss structure analysis](./examples/truss_structure_analysis/p4struct_mises_deformed_result.png "P4Struct_Mises_Deformed_Result")
 Abaqus:
 ![truss structure analysis](./examples/truss_structure_analysis/abaqus_mises_deformed_result.png "Abaqus_Mises_Deformed_Result")
 
-#### 4.2 gravity dam analysis
+#### 5.2 gravity dam analysis
 P4Struct:
 ![gravity dam analysis](./examples/gravity_dam_analysis/p4struct_mises_deformed_result.png "P4struct_Mises_Deformed_Result")
 Abaqus:
 ![gravity dam analysis](./examples/gravity_dam_analysis/abaqus_mises_deformed_result.png "Abaqus_Mises_Deformed_Result")
 
-#### 4.3 torsion beam analysis
+#### 5.3 torsion beam analysis
 P4Struct:
 ![torsion beam analysis](./examples/torsion_beam_analysis/p4struct_mises_deformed_result.png "P4struct_Mises_Deformed_Result")
 Abaqus:
 ![torsion beam analysis](./examples/torsion_beam_analysis/abaqus_mises_deformed_result.png "P4struct_Mises_Deformed_Result")
 
-#### 4.4 wing rib optimization
+#### 5.4 wing rib optimization
 P4Struct:
 ![wing rib optimization](./examples/wing_rib_optimization/topological%20configuration_result.png "Configuration_Result")
 
-#### 4.5 cylinder optimization
+#### 5.5 cylinder optimization
 P4Struct:
 ![cylinder optimization](.//examples/cylinder_optimization/topological%20configuration_result.png "Configuration_Result")
 
-#### 4.6 panel optimization
+#### 5.6 panel optimization
 P4Struct:
 ![panel optimization](./examples/panel_optimization/topological%20configuration_result.png "Configuration_Result")
 
-## 5. Contact information
+## 6. Contact information
 This is an initial version which may contain bugs.
+
 Please contact us promptly if you encounter any issues.
+
 E-mail: <jihuaiwang@outlook.com>
 
-## 6. Reference
+## 7. Reference
 
 xxxxx
