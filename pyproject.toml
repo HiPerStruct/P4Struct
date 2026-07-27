@@ -1,0 +1,22 @@
+[project]
+name = "p4struct"
+version = "0.1.0"
+description = "An open-source software framework: Program for Structural Design (P4Struct)"
+authors = ["Huaiwang Ji <jihuaiwang@outlook.com>"]
+readme = "README.md"
+license = "AGPL-3.0"
+homepage = "https://github.com/HiPerStruct/P4Struct"
+requires-python = ">=3.12"
+dependencies = [
+    "datetime>=6.0",
+    "h5py==3.13",
+    "numpy>=2.4.1",
+    "psutil>=7.2.1",
+    "pypardiso>=0.4.7",
+    "pyside6>=6.10.1",
+    "scipy>=1.17.0",
+    "vtk>=9.5.2",
+]
+
+
+
