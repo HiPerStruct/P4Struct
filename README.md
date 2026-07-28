@@ -36,7 +36,6 @@ Step 2: Environment Setup.
 ```powershell
 cd <your_path>
 robocopy ...\<src> <your_path> /e /i
-uv init -p 3.12 <your_path>
 uv sync
 ```
 
