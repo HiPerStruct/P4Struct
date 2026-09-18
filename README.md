@@ -1,5 +1,5 @@
 # ![P4Struct Icon](./images/app%20icon.ico) P4Struct —— Program for Structural Design
-![Version](https://img.shields.io/badge/Version-1.0-yellow.svg) [![License](https://img.shields.io/badge/License-AGPLv3.0-green.svg)](LICENSE) [![Python](https://img.shields.io/badge/Python-3.12+-blue.svg)](https://www.python.org/) [![uv](https://img.shields.io/badge/uv-0.9+-orange.svg)](https://docs.astral.sh/uv/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22830119.svg)](https://doi.org/10.5281/zenodo.22830119) ![Version](https://img.shields.io/badge/Version-1.0-yellow.svg) [![License](https://img.shields.io/badge/License-AGPLv3.0-green.svg)](LICENSE) [![Python](https://img.shields.io/badge/Python-3.12+-blue.svg)](https://www.python.org/) [![uv](https://img.shields.io/badge/uv-0.9+-orange.svg)](https://docs.astral.sh/uv/)
 ## 1. Description
 ## 1. Description
 An **open-source** structural design software. P4Struct is built on a multi-layered architecture that couples an interactive interface with a database system, enabling efficient data management and workflow execution. Taking mesh models as input, P4Struct enables a complete design workflow encompassing **preprocessing, finite element analysis, topology optimization, and post-processing**, ultimately generating STL models.
