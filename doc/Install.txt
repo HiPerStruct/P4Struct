@@ -1,0 +1,9 @@
+1.Run in cmd：powershell -ExecutionPolicy ByPass -c "$env:UV_INSTALL_DIR = 'D:\UV';irm https://astral.sh/uv/install.ps1 | iex"
+2.Use CMD commands to locate the folder that contains the .toml and .lock files.
+3.Run in cmd：uv sync
+4.Install VS Code or PyCharm, and set the src folder as the project path.
+5.Select the Python interpreter at .venv\Scripts\python.exe.
+6.Open app.py and start a trial run of the program.
+7.Copy all files under examples into the P4STemp folder.
+8.Finished!
+9.To uninstall, you can directly delete the entire folder (including the virtual environment) where it is located.

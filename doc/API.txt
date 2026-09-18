@@ -1,0 +1,773 @@
+Version: P4Struct V1.0
+
+Public API
+
+1.app.py	—	 Program entry / main program
+
+
+2.ui		—	Interaction and visualization
+
+	2.1 main_window.py	—	Main window
+
+		2.1.1 P4SMainWindow	—	Main window class
+
+			2.1.1.1 createProjectDatabase
+				input:	full_project_name(str)
+				output:	None
+
+			2.1.1.2 openProjectDatabase
+				input:	full_project_name(str)
+				output:	None
+
+			2.1.1.3	printMessage
+				input:	text(str)
+				output:	None
+
+			2.1.1.4	clearMessage
+				input:	None
+				output:	None
+
+	2.2 menubar.py		—	Menu bar
+
+		2.2.1 P4SMainMenubar	—	Menu bar class
+
+	2.3 toolbar.py		—	Toolbar
+
+		2.3.1 P4SMainToolbar		—	Main toolbar class
+
+			2.3.1.1 setToolsEnabled
+				input:	state(bool)
+				output:	None
+
+			2.3.1.2 getRuningTaskNumber
+				input:	None
+				output:	running_task_numer(int)
+
+		2.3.2 P4SVisualizationToolbar	—	Visualization toolbar class
+
+			2.3.2.1 clearToolsState
+				input:	None
+				output:	None
+
+			2.3.2.2 setSelectionState
+				input:	type(str),state(bool)
+				output:	None
+
+			2.3.2.3 collectVisualizationToolbar
+				input:	None
+				output:	None
+
+	2.4 manager.py		—	Management window
+
+		2.4.1 P4SModelManager	—	Model management class
+
+			2.4.1.1 getModelsNameList
+				input:	None
+				output:	models_name(list)
+			
+			2.4.1.2 getCurrentModleName
+				input:	None
+				output:	model_name(str)
+
+			2.4.1.3 ImportModelFromProject
+				input:	model_name(str),model_dimension(str)
+				output:	None
+
+			2.4.1.4 createModelManager
+				input:	model_name(str),model_dimension(str)
+				output:	None
+
+			2.4.1.5 renameCurrentModel
+				input:	model_name(str)
+				output:	None
+
+			2.4.1.6 removeCurrentModel
+				input:	enable_model_change(bool=True)
+				output:	None
+
+		2.4.2 P4SResultManager	—	Result management class
+
+			2.4.2.1 getExistResultDatabaseFullName
+				input:	None
+				output:	databases_name(list)
+			
+			2.4.2.2 getCurrentStepAndFrame
+				input:	None
+				output:	steps_name and frames_name(list)
+
+			2.4.2.3 createResultManager
+				input:	result_full_name(str)
+				output:	None
+
+			2.4.2.4 closeCurrentResultManager
+				input:	None
+				output:	None
+
+			2.4.2.5 changeResultMode
+				input:	None
+				output:	None
+
+	2.5 viualization.py	—	Visualization
+
+		2.5.1 P4SModelVisualWindow	—	Model visualization class
+
+			2.5.1.1  renameModel
+				 input:		new_model_name(str)
+				 output:	None
+
+			2.5.1.2  getSelectionFromViewport
+				 input:		None
+				 output:	selection_from_viewport(dict)
+
+			2.5.1.3  setSelectionMode
+				 input:		mode(str)
+				 output:	None
+
+			2.5.1.4  setSelectionMethod
+				 input:		method(str)
+				 output:	None
+
+			2.5.1.5  setViewportView
+				 input:		view_orientation(str)
+				 output:	None
+			
+			2.5.1.6  setViewportRenderStyle
+				 input:		style(str)
+				 output:	None
+
+			2.5.1.7  getViewportActorsColor
+				 input:		style(str)
+				 output:	actors_color(dict)
+
+			2.5.1.8  setViewportActorsColor
+				 input:		actors_color(dict)
+				 output:	None
+			
+			2.5.1.9  getViewportActorsOpacity
+				 input:		None
+				 output:	actors_opacity(dict)
+
+			2.5.1.10 setViewportActorsColor
+				 input:		actors_opacity(dict)
+				 output:	None
+			
+			2.5.1.11 getViewportActorsVisibility
+				 input:		None
+				 output:	actors_visibility(dict)
+
+			2.5.1.12 setViewportActorsVisibiolity
+				 input:		actors_visibility(dict)
+				 output:	None
+
+			2.5.1.13 switchModuleViewport
+				 input:		module_type(str)
+				 output:	None
+
+			2.5.1.14 getCoordinateSystemsOfCurrentViewport
+				 input:		coordinate_systems(list)
+				 output:	None
+			
+			2.5.1.15 addCoordinateSystemToCurrentViewport
+				 input:		coordinate_system_name(str), coordinate_system_info(dict)
+				 output:	None
+
+			2.5.1.16 deleteCoordinateSystemToCurrentViewport
+				 input:		coordinate_system_name(str)
+				 output:	None
+
+			2.5.1.17 renameShownCoordinateSystemOfCurrentViewport
+				 input:		old_coordinate_system_name(str), new_coordinate_system_name(str)
+				 output:	None
+
+			2.5.1.18 editCoordinateSystemOfCurrentViewport
+				 input:		coordinate_system_name(str), type(str), reference_axis(str), value(float)
+				 output:	None
+				
+			2.5.1.19 getCurrentPartName
+				 input:		None
+				 output:	part_name(str)
+
+			2.5.1.20 switchPartViewport
+				 input:		part_name(str)
+				 output:	None
+
+			2.5.1.21 createPartViewport
+				 input:		project_database(object), part_name(str)
+				 output:	None
+
+			2.5.1.22 renamePartViewport
+				 input:		old_part_name(str), new_part_name(str)
+				 output:	None
+
+			2.5.1.23 removePartViewport
+				 input:		part_name(str)
+				 output:	None
+			
+			2.5.1.24 switchPartViewportAxesVisibility
+				 input:		part_name(str)
+				 output:	None
+
+			2.5.1.25 showPartViewportGroup
+				 input:		project_database(object), part_name(str), group_type(str), group_name(str)
+				 output:	None
+			
+			2.5.1.26 switchPartViewportElementsOrientationVisibility
+				 input:		project_database(object), part_name(str), group_name(str)
+				 output:	None
+			
+			2.5.1.27 switchAssemblyViewportAxesVisibility
+				 input:		None
+				 output:	None
+
+			2.5.1.28 addInstanceToViewport
+				 input:		part_name(str), instance_name(str), instance_orientation(list=[])
+				 output:	None
+
+			2.5.1.29 editInstanceOrientationOfAssemblyViewport
+				 input:		instance_name(str), type(str), assembly_coordinate_system(str), direction(str), value(float)
+				 output:	None
+
+			2.5.1.30 renameInstanceViewport
+				 input:		old_instance_name(str), new_instance_name(str)
+				 output:	None
+			
+			2.5.1.31 removeInstanceOfAssemblyViewport
+				 input:		instance_name(str)
+				 output:	None
+
+			2.5.1.32 showAssemblyViewportGroup
+				 input:		project_database(object), group_type(str), assembly_group_name(str)
+				 output:	None
+
+			2.5.1.33 getShownBoundaryConditionsOfAssemblyViewport
+				 input:		None
+				 output:	shown_boundary_conditions(list)
+
+			2.5.1.34 addBoundaryConditionToAssemblyViewport
+				 input:		project_database(object), boundary_condition_name(str)
+				 output:	None
+
+			2.5.1.35 removeBoundaryConditionToAssemblyViewport
+				 input:		boundary_condition_name(str)
+				 output:	None
+
+		2.5.2 P4SResultVisualWindow	—	Result visualization class
+			
+			2.5.1.1  getSelectionModeFromViewport
+				 input:		None
+				 output:	selection_mode(str)
+
+			2.5.1.2  getSelectionFromViewport
+				 input:		None
+				 output:	selection_from_viewport(dict)
+
+			2.5.1.3  setSelectionMode
+				 input:		mode(str)
+				 output:	None
+
+			2.5.1.4  setSelectionMethod
+				 input:		method(str)
+				 output:	None
+
+			2.5.1.5  setViewportView
+				 input:		view_orientation(str)
+				 output:	None
+			
+			2.5.1.6  setViewportRenderStyle
+				 input:		style(str)
+				 output:	None
+
+			2.5.1.7  getViewportActorsColor
+				 input:		style(str)
+				 output:	actors_color(dict)
+
+			2.5.1.8  setViewportActorsColor
+				 input:		actors_color(dict)
+				 output:	None
+			
+			2.5.1.9  getViewportActorsOpacity
+				 input:		None
+				 output:	actors_opacity(dict)
+
+			2.5.1.10 setViewportActorsColor
+				 input:		actors_opacity(dict)
+				 output:	None
+			
+			2.5.1.11 getViewportActorsVisibility
+				 input:		None
+				 output:	actors_visibility(dict)
+
+			2.5.1.12 setViewportActorsVisibiolity
+				 input:		actors_visibility(dict)
+				 output:	None
+
+			2.5.1.13 changeVariableOfViewport
+				 input:		variable_name(str)
+				 output:	None
+
+			2.5.1.14 changeVariableComponent
+				 input:		step_name(str), frame_name(str), component_name(str)
+				 output:	None
+			
+			2.5.1.15 changeFrameOfViewport
+				 input:		variable_name(str), component_name(str), step_name(str), frame_name(str)
+				 output:	None
+
+			2.5.1.16 changeDeformationStateOfViewport
+				 input:		deformation_infomation(list=[])
+				 output:	None
+
+			2.5.1.17 changeColorMapOfViewport
+				 input:		map_name(str)
+				 output:	None
+
+			2.5.1.18 changeColorNumberOfViewport
+				 input:		map_name(str), color_number(int)
+				 output:	None
+				
+			2.5.1.19 getDisplayTypeOfViewport
+				 input:		None
+				 output:	display_type(str)
+
+			2.5.1.20 exportContourDataToCSVOfViewport
+				 input:		csv_file_full_name(str)
+				 output:	None
+
+			2.5.1.21 exportContourDataToImageOfViewport
+				 input:		work_path(str)
+				 output:	None
+
+			2.5.1.22 createGraphOfViewport
+				 input:		graph_infomation(dict)
+				 output:	None
+
+			2.5.1.23 switchGraphOfViewport
+				 input:		graph_name(str)
+				 output:	None
+			
+			2.5.1.24 renameGraphOfViewport
+				 input:		old_graph_name(str), new_graph_name(str)
+				 output:	None
+
+			2.5.1.25 exportGraphDataToCSVOfViewport
+				 input:		graph_name(str), csv_file_full_name(str)
+				 output:	None
+			
+			2.5.1.26 exportGraphToImageOfViewport
+				 input:		graph_name(str), work_path(str)
+				 output:	None
+			
+			2.5.1.27 deleteGraphOfViewport
+				 input:		graph_name(str)
+				 output:	None
+
+			2.5.1.28 getDatabaseTypeOfViewport
+				 input:		None
+				 output:	database_type(str)
+
+			2.5.1.29 getTopologyDensityThresholdOfViewport
+				 input:		None
+				 output:	topology_density_threshold(float)
+
+			2.5.1.30 binarizeTopolotyDensityOfViewport
+				 input:		threshold(float), step_name(str), frame_name(str)
+				 output:	None
+
+			
+3.engine	—	Analysis and optimization
+
+	3.1 common.py			—	General variables and functions
+
+		3.1.1 P4SString			—	Software information class
+
+		3.1.2 P4SFormat			—	Format information class
+
+		3.1.3 P4SImportInfo		—	Import information class
+
+		3.1.4 P4SElementInfo		—	Element information class
+			3.1.4.1 getElementsTBDKMatrixes
+				input:		temp_file_full_name(str)
+				output:		None
+			
+			3.1.4.2 getAssembleGlobalStiffnessMatrixSparseInformation
+				input:		temp_file_full_name(str)
+				output:		None
+
+			3.1.4.3 getElementIntegrationPointsNumber
+				input:		type_number(int)
+				output:		element_integration_points_number(int)
+
+			3.1.4.4 getElementIntegrationPointsStrainAndStress
+				input:		temp_file_full_name(str)
+				output:		None
+
+		3.1.5 P4SStepInfo		—	Step information class
+
+		3.1.6 P4SOutputInfo		—	Output information class
+
+		3.1.7 P4SBCInfo			—	Boundary condition information class
+
+		3.1.8 P4SOtherInfo		—	Other information class
+
+		3.1.9 P4SOptimizationInfo	—	Optimization information class
+
+			3.1.9.1  getElementsCenter
+				 input:		temp_file_full_name(str)
+				 output:	None
+			
+			3.1.9.2  getElementsNeighborsAndWeights
+				 input:		temp_file_full_name(str)
+				 output:	None
+
+			3.1.9.3  getGlobalConstrainedDOFsLocation
+				 input:		temp_file_full_name(str), fea_process_file_full_name(str), process_topopt_group(object)
+				 output:	None
+
+			3.1.9.4  getElementsDOFs
+				 input:		temp_file_full_name(str), fea_process_file_full_name(str), process_topopt_group(object)
+				 output:	None
+
+			3.1.9.5  getElementsFilteredDensityAndChainGradientInformation
+				 input:		temp_file_full_name(str)
+				 output:	None
+
+			3.1.9.6  getElementsProjectionDensityAndChainGradientInformation
+				 input:		temp_file_full_name(str)
+				 output:	None
+
+			3.1.9.7  getElementsInterpolationFunction
+				 input:		temp_file_full_name(str)
+				 output:	None
+
+			3.1.9.8  getElementsSEValue
+				 input:		temp_file_full_name(str)
+				 output:	None
+
+			3.1.9.9  getElementsSESensitivity
+				 input:		temp_file_full_name(str)
+				 output:	None
+
+			3.1.9.10 getElementsVOLSensitivity
+				 input:		temp_file_full_name(str)
+				 output:	None
+			
+			3.1.9.11 getElementsCSValue
+				 input:		temp_file_full_name(str)
+				 output:	None
+
+			3.1.9.12 getElementsMulMatrix
+				 input:		temp_file_full_name(str)
+				 output:	None
+
+			3.1.9.13 getElementsMisesPNGradient
+				 input:		temp_file_full_name(str)
+				 output:	None
+
+			3.1.9.14 getElementsCSSensitivity
+				 input:		temp_file_full_name(str)
+				 output:	None
+
+	3.2 finite_element_analysis.py 	—	FEA
+
+		3.2.1 intoFEAProcess
+			input:	task_flie_full_name(str), task_process_queen(object)
+			output:	None
+
+	3.3 optimization_analysis.py	—	Optimization
+		
+		3.3.1 getPiecewiseFunctionAmplitudeFromPoint
+			input:	point(float), function_params(list)
+			output:	function_amplitude(float)
+
+		3.3.2 getAvailableProcessNumber
+			input:	None
+			output:	available_cpu_number(int)
+
+	3.4 tools.py			—	Tool function
+
+		3.4.1 intoOPTProcess
+			input:	optimization_type(str), task_flie_full_name(str), task_process_queen(object)
+			output:	None
+
+
+4.db		—	Database
+
+	4.1 project.py	—	Database operation
+
+		4.1.1 P4SProjectDatabase	—	Database class
+
+			4.1.1.1  getFullProjectName
+				 input:		None
+				 output:	full_project_name(str)
+
+			4.1.1.2  saveProjectDatabase
+				 input:		None
+				 output:	None
+
+			4.1.1.3  closeProjectDatabase
+				 input:		None
+				 output:	None
+
+			4.1.1.4  getModelInformation
+				 input:		model_name(str)
+				 output:	model_information(dict)
+
+			4.1.1.5  getModels
+				 input:		None
+				 output:	models_name(list)
+
+			4.1.1.6  getModelDimension
+				 input:		model_name(str)
+				 output:	model_dimension(str)
+
+			4.1.1.7  createModel
+				 input:		model_name(str), model_dimension(str)
+				 output:	None
+
+			4.1.1.8  renameModel
+				 input:		old_model_name(str), new_model_name(str)
+				 output:	None
+
+			4.1.1.9  importModelDataToProject
+				 input:		project_full_name(str), model_name(str)
+				 output:	None
+
+			4.1.1.10 removeModel
+				 input:		model_name(str)
+				 output:	None
+
+			4.1.1.11 outpuFEMTaskFile
+				 input:		model_name(str), task_full_name(str)
+				 output:	None
+			
+			4.1.1.12 getPartComponents
+				 input:		model_name(str), part_name(str)
+				 output:	part_components(list)
+
+			4.1.1.13 getPartGroupLabels
+				 input:		model_name(str), part_name(str), group_type(str), group_name(str)
+				 output:	labels(list)
+
+			4.1.1.14 importMeshParts
+				 input:		model_name(str), full_file_name(str), parts_name(list)
+				 output:	parts_include_groups(dict)
+
+			4.1.1.15 duplicateMeshPart
+				 input:		model_name(str), source_part_name(str), object_part_name(str)
+				 output:	None
+
+			4.1.1.16 renamePart
+				 input:		model_name(str), old_part_name(str), new_part_name(str)
+				 output:	None
+
+			4.1.1.17 removePart
+				 input:		model_name(str), part_name(str)
+				 output:	association_info(dict)
+
+			4.1.1.18 getPartElementsOrientationParameters
+				 input:		model_name(str), part_name(str), group_name(str)
+				 output:	elements_orientation_parameters(dict)
+
+			4.1.1.19 getMaterialInformation
+				 input:		model_name(str), material_name(str)
+				 output:	material_info(dict)
+
+			4.1.1.20 createMaterial
+				 input:		model_name(str), material_info(dict)
+				 output:	None
+
+			4.1.1.21 renameMaterial
+				 input:		model_name(str), old_material_name(str), new_material_name(str)
+				 output:	None
+
+			4.1.1.22 editMaterial
+				 input:		model_name(str), material_name(str), material_info(dict)
+				 output:	None
+
+			4.1.1.23 removeMaterial
+				 input:		model_name(str), material_name(str)
+				 output:	associated_property_assignments_gruops(dict)
+
+			4.1.1.24 getAttributesByType
+				 input:		model_name(str)
+				 output:	attributes_type(dict)
+
+			4.1.1.25 getAttributeInformation
+				 input:		model_name(str), attribute_info(dict)
+				 output:	attribute_info(dict)
+
+			4.1.1.26 createAttribute
+				 input:		model_name(str), attribute_info(dict)
+				 output:	None
+
+			4.1.1.27 renameAttribute
+				 input:		model_name(str), old_attribute_name(str), new_attribute_name(str)
+				 output:	None
+
+			4.1.1.28 editAttribute
+				 input:		model_name(str), attribute_name(str), attribute_info(dict)
+				 output:	None
+
+			4.1.1.29 removeAttribute
+				 input:		model_name(str), attribute_name(str)
+				 output:	associated_property_assignments_gruops(dict)
+
+			4.1.1.30 getInstanceSourcePart
+				 input:		model_name(str), instance_name(str)
+				 output:	source_part_name(str)
+
+			4.1.1.31 getInstanceOrientation
+				 input:		model_name(str), instance_name(str)
+				 output:	instance_orientation(list)
+
+			4.1.1.32 createInstanceFromPart
+				 input:		model_name(str), part_name(str), instance_name(str)
+				 output:	None
+
+			4.1.1.33 renameInstance
+				 input:		model_name(str), old_instance_name(str), new_instance_name(str)
+				 output:	None
+
+			4.1.1.34 editInstanceOrientation
+				 input:		model_name(str), instance_name(str), type(str), assembly_coordinate_system_info(dict), direction(str), value(float)
+				 output:	None
+
+			4.1.1.35 removeInstance
+				 input:		model_name(str), instance_name(str)
+				 output:	association_info(dict)
+
+			4.1.1.36 getInstanceIncludePartGroups
+				 input:		model_name(str), group_type(str), instance_name(str)
+				 output:	instance_include_part_groups(list)
+
+			4.1.1.37 getAssemblyGroupLabels
+				 input:		model_name(str), group_type(str), group_name(str)
+				 output:	associated_instance_include_labels(dict)
+
+			4.1.1.38 createAssemblyGroupFromSelection
+				 input:		model_name(str), type(str), assembly_group_name(str), include_labels(dict)
+				 output:	None
+
+			4.1.1.39 createAssemblyGroupFromPart
+				 input:		model_name(str), type(str), group_info(list)
+				 output:	None
+
+			4.1.1.40 renameAssemblyGroup
+				 input:		model_name(str), group_type(str), old_group_name(str), new_group_name(str)
+				 output:	None
+
+			4.1.1.41 editAssemblyGroupFromSelection
+				 input:		model_name(str), group_type(str), assembly_group_name(str), include_labels(dict)
+				 output:	None
+
+			4.1.1.42 removeAssemblyGroup
+				 input:		model_name(str), group_type(str), assembly_group_name(str)
+				 output:	association_info(dict)
+
+			4.1.1.43 getAssemblyNodesCooridnates
+				 input:		model_name(str), instance_include_nodes_label(dict)
+				 output:	nodes_coordinates_list(list)
+
+			4.1.1.44 getAssemblyCoordinateSystemInfo
+				 input:		model_name(str), coordinate_system_name(str)
+				 output:	assembly_coordinate_system_info(dict)
+
+			4.1.1.45 createAssemblyCoordinateSystem
+				 input:		model_name(str), coordinate_system_info(dict)
+				 output:	None
+
+			4.1.1.46 renameAssemblyCoordinateSystem
+				 input:		model_name(str), old_coordiante_system_name(str), new_coordiante_system_name(str)
+				 output:	None
+
+			4.1.1.47 editAssemblyCoordinateSystemLocation
+				 input:		model_name(str), coordinate_system_name(str), type(str), reference_axis(str), value(float)
+				 output:	None
+
+			4.1.1.48 removeAssemblyCoordinateSystem
+				 input:		model_name(str), coordinate_system_name(str)
+				 output:	None
+
+			4.1.1.49 getStepInformation
+				 input:		model_name(str), step_name(str)
+				 output:	step_info(dict)
+
+			4.1.1.50 createStep
+				 input:		model_name(str), step_info(dict)
+				 output:	None
+
+			4.1.1.51 renameStep
+				 input:		model_name(str), old_step_name(str), new_step_name(str)
+				 output:	None
+
+			4.1.1.52 editStep
+				 input:		model_name(str), step_info(dict)
+				 output:	None
+
+			4.1.1.53 removeStep
+				 input:		model_name(str), step_name(str)
+				 output:	association_info(dict)
+
+			4.1.1.54 getOutputInformation
+				 input:		model_name(str), output_name(str)
+				 output:	output_info(dict)
+
+			4.1.1.55 createOutput
+				 input:		model_name(str), output_info(dict)
+				 output:	None
+
+			4.1.1.56 renameOutput
+				 input:		model_name(str), old_output_name(str), new_output_name(str)
+				 output:	None
+
+			4.1.1.57 editOutput
+				 input:		model_name(str), output_info(dict)
+				 output:	None
+
+			4.1.1.58 removeOutput
+				 input:		model_name(str), output_name(str)
+				 output:	None
+
+			4.1.1.59 getBoundaryConditionInformation
+				 input:		model_name(str), boundary_condition_name(str)
+				 output:	association_info(dict)
+
+			4.1.1.60 getBoundaryConditionsByStep
+				 input:		model_name(str)
+				 output:	boundary_conditions(dict)
+
+			4.1.1.61 createBoundaryCondition
+				 input:		model_name(str), condition_type(str), group_type(str), boundary_condition_info(dict)
+				 output:	None
+
+			4.1.1.62 renameBoundaryCondition
+				 input:		model_name(str), old_condition_name(str), new_condition_name(str)
+				 output:	None
+
+			4.1.1.63 editBoundaryCondition
+				 input:		model_name(str),  edit_boundary_condition_info(dict)
+				 output:	None
+
+			4.1.1.64 removeBoundaryCondition
+				 input:		model_name(str), boundary_condition_name(str)
+				 output:	None
+			
+			4.1.1.65 getFunctionInformation
+				 input:		model_name(str), function_name(str)
+				 output:	function_info(dict)
+
+			4.1.1.66 createFunction
+				 input:		model_name(str), function_info(dict)
+				 output:	None
+
+			4.1.1.67 renameFunction
+				 input:		model_name(str), old_function_name(str), new_function_name(str)
+				 output:	None
+
+			4.1.1.68 editFunction
+				 input:		model_name(str),  function_info(dict)
+				 output:	None
+
+			4.1.1.69 removeFunction
+				 input:		model_name(str), function_name(str)
+				 output:	None

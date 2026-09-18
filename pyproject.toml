@@ -1,0 +1,16 @@
+[project]
+name = "p4struct"
+version = "1.0"
+description = "Python environment setup for P4Struct V1.0"
+readme = "README.md"
+requires-python = "==3.12.12"
+dependencies = [
+    "datetime==6.0",
+    "h5py==3.13",
+    "numpy==2.4.1",
+    "psutil==7.2.1",
+    "pypardiso==0.4.7",
+    "pyside6==6.10.1",
+    "scipy==1.17.0",
+    "vtk==9.5.2",
+]
